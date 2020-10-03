@@ -13,6 +13,10 @@
     float: left;
 }
 
+.App > .audioPlaying {
+    background-color: orange !important;
+}
+
 Key {
     height: 16%;
 }
