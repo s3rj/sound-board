@@ -14,7 +14,7 @@ const Key = props => {
             let sound = document.getElementById(props.letter);
             console.log(e.key);
             // a placeholder, ~this/props
-            if(e.key === props.letter.toLowerCase()){
+            if (e.key === props.letter.toLowerCase()) {
                 console.log(props);
                 sound.currentTime = 0;
                 sound.play();
@@ -23,21 +23,20 @@ const Key = props => {
     }
 
     const handleClick = e => {
-   
+
         let sound = document.getElementById(props.letter);
         sound.currentTime = 0;
         sound.play();
         console.log(props)
-      }
+    }
 
     return (
-        //pass id and src as props
         <div onClick={handleClick}>
             <p>{props.letter}</p>
             <audio media-player="audioPlayer"
-            preload="auto" 
-            crossOrigin="anonymous" className='clip' 
-            id={props.letter} src={process.env.PUBLIC_URL+'/sounds/'+props.src} key={props.letter} >audio</audio>
+                preload="auto"
+                crossOrigin="anonymous" className='clip'
+                id={props.letter} src={process.env.PUBLIC_URL + '/sounds/' + props.src} key={props.letter} >audio</audio>
         </div>
     );
 }
