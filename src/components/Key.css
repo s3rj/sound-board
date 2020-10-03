@@ -1,0 +1,18 @@
+
+
+* { border: 1px solid black; }
+
+.App > div:hover {
+    background-color: teal;
+  }
+
+.App > div { 
+    background-color: green;
+    width: 16.1%;
+    position:relative;
+    float: left;
+}
+
+Key {
+    height: 16%;
+}
