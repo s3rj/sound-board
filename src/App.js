@@ -27,6 +27,7 @@ function App() {
 
   return (
     <div>
+      <h1>🎹📻🔈</h1>
       <h1>Keyboard Soundbox</h1>
       <div keymap={keyMap} className="App">
         {keyMap.map(props => (

@@ -8,9 +8,10 @@ body {
 h1 {
   text-align:center;
   color: aquamarine;
-  top: 5%;
-  left: 32%;
-  position: absolute;
+  
+ 
+  
+  
   
 }
 
@@ -41,3 +42,17 @@ h1 {
 }
 
 
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+
+  .App{  
+    grid-template-columns: repeat(10, 25px);
+    grid-template-rows: repeat(6, 50px);
+    grid-gap: 5px;
+    width: auto;
+    
+    }
+ 
+}
