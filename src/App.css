@@ -1,4 +1,4 @@
-* { border: 1px solid red; }
+
 
 body {
   background-color: #282c34;
@@ -47,10 +47,11 @@ h1 {
 }
 
 .Panel{
-  top: 50%;
+  top: 550px;
   position:fixed;
   background-color: white;
   display: grid;
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -63,9 +64,11 @@ h1 {
     grid-template-rows: repeat(6, 50px);
     grid-gap: 5px;
     width: auto;
-    top: 40%;
+    top: 300px;
     
     }
+
+  
  
 }
 
