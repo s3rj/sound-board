@@ -26,7 +26,7 @@ const Key = props => {
 
     const handleKeyUp = e => {
         if (e.key === props.letter.toLowerCase()) {
-            let keyDiv = document.getElementById(props.letter);
+            //let keyDiv = document.getElementById(props.letter);
             console.log(e.key);
             
             if (e.key === props.letter.toLowerCase()) {

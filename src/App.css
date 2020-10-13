@@ -20,15 +20,15 @@ h1 {
   text-align: center;
   box-shadow: 0 3px 6px #999, 0 3px 6px #999;
   
-  
+  position:fixed;
   background-color: aquamarine;
-  position: relative;
+  
   width: 740px;
   box-sizing: border-box;
 
   max-width: 1085px;
   padding: 20px;
-  position: absolute;
+  
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -52,6 +52,7 @@ h1 {
     grid-template-rows: repeat(6, 50px);
     grid-gap: 5px;
     width: auto;
+    top: 40%;
     
     }
  

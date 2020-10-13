@@ -15,7 +15,7 @@ function App() {
     if (true) {
       let sound = document.querySelectorAll('audio');
       console.log(e.key);
-      if (e.key === ']') {
+      if (e.key === ' ') {
 
         sound.forEach(element => {
           element.currentTime = 0;
@@ -30,6 +30,7 @@ function App() {
       <h1><span role="img" aria-label="keyboard radio speaker">🎹📻🔈</span></h1>
       <h1>Keyboard Soundbox</h1>
       <div keymap={keyMap} className="App">
+        
         {keyMap.map(props => (
           <Key
             key={props.letter}
@@ -39,6 +40,8 @@ function App() {
           />
         ))}
       </div>
+      <div>hi</div>
+    
     </div>
   );
 }
