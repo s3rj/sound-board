@@ -40,7 +40,8 @@ function App() {
           />
         ))}
       </div>
-      <div>hi</div>
+      <div className="Panel">hi</div>
+      
     
     </div>
   );
