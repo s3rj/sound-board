@@ -29,7 +29,7 @@ function App() {
     <div>
       <h1><span role="img" aria-label="keyboard radio speaker">🎹📻🔈</span></h1>
       <h1>Keyboard Soundbox</h1>
-      <div keymap={keyMap} className="App">
+      <div className="App">
         
         {keyMap.map(props => (
           <Key
@@ -40,7 +40,7 @@ function App() {
           />
         ))}
       </div>
-      <div className="Panel">hi</div>
+      <div className="Panel" onClick = {stopSounds}>[  _.  hi  ._  ]</div>
       
     
     </div>

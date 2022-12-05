@@ -48,9 +48,15 @@ h1 {
 
 .Panel{
   top: 550px;
-  position:fixed;
+  position:absolute;
   background-color: white;
   display: grid;
+  left: 50%;
+  background-color: rgb(183, 248, 248);
+  border: 2px solid black;
+  border-radius: 5px;
+
+  
 
 }
 
@@ -65,6 +71,20 @@ h1 {
     grid-gap: 5px;
     width: auto;
     top: 300px;
+    
+    }
+
+    .Panel{
+      top: 550px;
+      position:absolute;
+      background-color: white;
+      display: grid;
+      left: 41%;
+      background-color: rgb(183, 248, 248);
+      border: 2px solid black;
+      border-radius: 5px;
+    
+      
     
     }
 
