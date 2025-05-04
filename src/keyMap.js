@@ -19,7 +19,7 @@ const keyMap = [
     {letter: 'j', name: 'name', src: 'kaching.mp3'},
     {letter: 'k', name: 'name', src: 'clapping.mp3'},
     {letter: 'l', name: 'name', src: 'dialup.mp3'},
-    {letter: ';', name: 'name', src: 'discord.mp3'},
+    // {letter: ';', name: 'name', src: 'discord.mp3'},
     {letter: 'z', name: 'name', src: 'plucky.mp3'},
     {letter: 'x', name: 'name', src: 'xfiles.mp3'},
     {letter: 'c', name: 'name', src: 'nflix.mp3'},
@@ -28,7 +28,7 @@ const keyMap = [
     {letter: 'n', name: 'name', src: 'hollow.mp3'},
     {letter: 'm', name: 'name', src: 'nani.mp3'},
     {letter: ',', name: 'name', src: 'sonyPlaystation.mp3'},
-    {letter: '.', name: 'name', src: 'discord.mp3'},
-    {letter: '/', name: 'name', src: 'discord.mp3'},
+    // {letter: '.', name: 'name', src: 'discord.mp3'},
+    // {letter: '/', name: 'name', src: 'discord.mp3'},
 ]
 export default keyMap

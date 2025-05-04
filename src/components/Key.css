@@ -1,5 +1,3 @@
-
-
 /* * { border: 1px solid black; } */
 
 body * {
@@ -11,7 +9,7 @@ body * {
 
 .App > div:hover {
     background-color: teal;
-  }
+}
 
 .App > div { 
     background-color: rgb(183, 248, 248);
@@ -21,25 +19,27 @@ body * {
     font-size: 20px;
     text-align: center;
     padding-top: 17px;
- 
-
+    transition: background-color 0.1s ease;
 }
 
-.App > .audioPlaying {
-    background-color: orange !important;
+.App > div.keyPressed {
+    background-color: #32cd32 !important; /* Lime green */
+    transition: none;
+    z-index: 2;
+}
+
+.App > div.audioPlaying {
+    background-color: #ff8c00; /* Bright orange */
+    transition: none;
+    z-index: 1;
 }
 
 Key {
     height: 200px;
-
 }
 
 @media only screen and (max-width: 600px) {
-    .App>div {
-      background-color: lightblue;
-    }
-
-    .App > div { 
+    .App > div {
         background-color: rgb(183, 248, 248);
         border: 2px solid black;
         border-radius: 5px;
@@ -47,6 +47,5 @@ Key {
         font-size: 15px;
         text-align: center;
         padding-top: 15px;
-     
-  }
+    }
 }

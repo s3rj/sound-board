@@ -1,67 +1,88 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import './Key.css';
 
 const Key = props => {
+    const [isPressed, setIsPressed] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(false);
 
     useEffect(() => {
         window.addEventListener("keydown", handleKeyDown)
         window.addEventListener("keyup", handleKeyUp)
-        window.addEventListener("mouseDown", handleClick)
-    }, )
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown)
+            window.removeEventListener("keyup", handleKeyUp)
+        }
+    }, [])
+
+    // Add effect to handle silence trigger
+    useEffect(() => {
+        if (props.silenceTriggered > 0) {
+            setIsPlaying(false);
+        }
+    }, [props.silenceTriggered])
+
+    const createAndPlaySound = () => {
+        const audio = new Audio(process.env.PUBLIC_URL + '/sounds/' + props.src);
+        audio.addEventListener('play', () => handlePlay());
+        audio.addEventListener('ended', () => {
+            handleEnded();
+            audio.remove(); // Clean up the audio element when done
+        });
+        // Add the audio element to the DOM so it can be found by stopSounds
+        document.body.appendChild(audio);
+        audio.play();
+    }
 
     const handleKeyDown = e => {
         if (e.key === props.letter.toLowerCase()) {
-            let sound = document.getElementById("audio"+props.letter);
-            let keyDiv = document.getElementById(props.letter);
-            console.log(e.key);
-            // a placeholder, ~this/props
-            if (e.key === props.letter.toLowerCase()) {
-                console.log(props);
-                sound.currentTime = 0;
-                keyDiv.className = 'audioPlaying';
-                sound.play();
-            }
+            setIsPressed(true);
+            createAndPlaySound();
         }
     }
 
     const handleKeyUp = e => {
         if (e.key === props.letter.toLowerCase()) {
-            //let keyDiv = document.getElementById(props.letter);
-            console.log(e.key);
-            
-            if (e.key === props.letter.toLowerCase()) {
-                //keyDiv.className = '';
-            }
+            setIsPressed(false);
         }
     }
 
-    const handleClick = e => {
-        let sound = document.getElementById("audio"+props.letter);
-        sound.currentTime = 0;
-        sound.play();
-        console.log(props)
+    const handleMouseDown = () => {
+        setIsPressed(true);
+        createAndPlaySound();
     }
 
-    const handlePlay = e => {
-        let keyDiv = document.getElementById(props.letter);
-        keyDiv.className = 'audioPlaying';
+    const handleMouseUp = () => {
+        setIsPressed(false);
     }
 
-    const handleEnded = e => {
-        let keyDiv = document.getElementById(props.letter);
-        keyDiv.className = '';
+    const handleMouseLeave = () => {
+        setIsPressed(false);
+    }
+
+    const handlePlay = () => {
+        setIsPlaying(true);
+    }
+
+    const handleEnded = () => {
+        setIsPlaying(false);
+    }
+
+    const getClassName = () => {
+        const classes = [];
+        if (isPlaying) classes.push('audioPlaying');
+        if (isPressed) classes.push('keyPressed');
+        return classes.join(' ');
     }
 
     return (
-        <div onClick={handleClick} id = {props.letter}>
+        <div 
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
+            id={props.letter}
+            className={getClassName()}
+        >
             <p>{props.letter}</p>
-            <audio 
-                onEnded = {handleEnded}
-                onPlay = {handlePlay}
-                media-player="audioPlayer"
-                preload="auto"
-                crossOrigin="anonymous" className='clip'
-                id={"audio"+props.letter} src={process.env.PUBLIC_URL + '/sounds/' + props.src} key={props.letter} >audio</audio>
         </div>
     );
 }

@@ -1,94 +1,100 @@
-
-
 body {
   background-color: #282c34;
 }
 
-
-
-
 h1 {
-  text-align:center;
+  text-align: center;
   color: aquamarine;
-  
- 
-  
-  
-  
 }
-
 
 .App {
   text-align: center;
   box-shadow: 0 3px 6px #999, 0 3px 6px #999;
-  
-  position:absolute;
-  background-color: aquamarine;
-  
-  width: 740px;
+  position: absolute;
+  width: auto;
   box-sizing: border-box;
-
-  max-width: 1085px;
-  padding: 20px;
-  
+  padding: 15px 25px;
   top: 300px;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgb(197, 197, 197);
-  border-radius: 10px;
+  border-radius: 15px;
   display: grid;
-  grid-template-columns: repeat(20, 30px);
+  grid-template-columns: repeat(20, 35px);
   grid-template-rows: repeat(3, 60px);
-  grid-gap: 5px;
-
+  grid-gap: 4px;
   margin-left: auto;
   margin-right: auto;
-  
 }
 
-.Panel{
+/* Position the keys in a QWERTY layout */
+.App > div:nth-child(1) { grid-column: 1 / span 2; grid-row: 1; } /* Q */
+.App > div:nth-child(2) { grid-column: 3 / span 2; grid-row: 1; } /* W */
+.App > div:nth-child(3) { grid-column: 5 / span 2; grid-row: 1; } /* E */
+.App > div:nth-child(4) { grid-column: 7 / span 2; grid-row: 1; } /* R */
+.App > div:nth-child(5) { grid-column: 9 / span 2; grid-row: 1; } /* T */
+.App > div:nth-child(6) { grid-column: 11 / span 2; grid-row: 1; } /* Y */
+.App > div:nth-child(7) { grid-column: 13 / span 2; grid-row: 1; } /* U */
+.App > div:nth-child(8) { grid-column: 15 / span 2; grid-row: 1; } /* I */
+.App > div:nth-child(9) { grid-column: 17 / span 2; grid-row: 1; } /* O */
+.App > div:nth-child(10) { grid-column: 19 / span 2; grid-row: 1; } /* P */
+
+.App > div:nth-child(11) { grid-column: 2 / span 2; grid-row: 2; } /* A */
+.App > div:nth-child(12) { grid-column: 4 / span 2; grid-row: 2; } /* S */
+.App > div:nth-child(13) { grid-column: 6 / span 2; grid-row: 2; } /* D */
+.App > div:nth-child(14) { grid-column: 8 / span 2; grid-row: 2; } /* F */
+.App > div:nth-child(15) { grid-column: 10 / span 2; grid-row: 2; } /* G */
+.App > div:nth-child(16) { grid-column: 12 / span 2; grid-row: 2; } /* H */
+.App > div:nth-child(17) { grid-column: 14 / span 2; grid-row: 2; } /* J */
+.App > div:nth-child(18) { grid-column: 16 / span 2; grid-row: 2; } /* K */
+.App > div:nth-child(19) { grid-column: 18 / span 2; grid-row: 2; } /* L */
+
+.App > div:nth-child(20) { grid-column: 3 / span 2; grid-row: 3; } /* Z */
+.App > div:nth-child(21) { grid-column: 5 / span 2; grid-row: 3; } /* X */
+.App > div:nth-child(22) { grid-column: 7 / span 2; grid-row: 3; } /* C */
+.App > div:nth-child(23) { grid-column: 9 / span 2; grid-row: 3; } /* V */
+.App > div:nth-child(24) { grid-column: 11 / span 2; grid-row: 3; } /* B */
+.App > div:nth-child(25) { grid-column: 13 / span 2; grid-row: 3; } /* N */
+.App > div:nth-child(26) { grid-column: 15 / span 2; grid-row: 3; } /* M */
+.App > div:nth-child(27) { grid-column: 17 / span 2; grid-row: 3; } /* , */
+
+.Panel {
   top: 550px;
-  position:absolute;
-  background-color: white;
+  position: absolute;
   display: grid;
   left: 50%;
+  transform: translateX(-50%);
   background-color: rgb(183, 248, 248);
   border: 2px solid black;
   border-radius: 5px;
-
-  
-
+  padding: 10px 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.1s ease;
 }
 
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
+.Panel.silencing {
+  background-color: #32cd32 !important; /* Lime green */
+  transition: none;
+}
+
+.Panel:hover {
+  background-color: teal;
+  color: white;
+}
+
+@media only screen and (max-width: 900px) {
+  .App {
+    width: 95%;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(3, 50px);
+    grid-gap: 4px;
+    padding: 10px 20px;
   }
 
-  .App{  
-    grid-template-columns: repeat(10, 25px);
-    grid-template-rows: repeat(6, 50px);
-    grid-gap: 5px;
+  .Panel {
+    top: 550px;
     width: auto;
-    top: 300px;
-    
-    }
-
-    .Panel{
-      top: 550px;
-      position:absolute;
-      background-color: white;
-      display: grid;
-      left: 41%;
-      background-color: rgb(183, 248, 248);
-      border: 2px solid black;
-      border-radius: 5px;
-    
-      
-    
-    }
-
-  
- 
+  }
 }
 
